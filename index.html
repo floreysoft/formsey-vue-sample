@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formsey Sample</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="module" src="./formsey-fields-native.min.js" xxxsrc="https://cdn.formsey.com/formsey-fields-native.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+  </head>
+  <body>
+    <!-- Using vuefire (the official Firebase binding) -->
+    <div id="app">
+      <formsey-form
+        ref="formseyForm"
+        src="https://www.formsey.com/live/DHwdsd3s5IhNDCWVslZ7"
+      ></formsey-form>
+      <input type="button" value="Check" v-on:click="check">
+    </div>
+
+    <script>
+      var app = new Vue({
+        // element to mount to
+        el: "#app",
+        // initial data
+        data: {
+        },
+        // methods
+        methods: {
+          check: function() {
+            this.$refs.formseyForm.reportValidity();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
